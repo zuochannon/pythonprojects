@@ -1,16 +1,16 @@
 import random
 
-""" Checks if the user's input is a number between 1 and 100. 
-If it is, it will return the number. If it is not, it will 
-continue to ask the user for another number until it is a number between 1 and 100
-
-'q' to quit the program
-
-Returns a valid user's guess
-"""
-
 
 def get_num_from_user():
+    """ Checks if the user's input is a number between 1 and 100. 
+    If it is, it will return the number. If it is not, it will 
+    continue to ask the user for another number until it is a number between 1 and 100
+
+    'q' to quit the program
+
+    Returns a valid user's guess
+    """
+
     num = input(
         "Type 'q' to quit the program.\n Guess a number between 1 and 100: ")
 
