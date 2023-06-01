@@ -16,7 +16,7 @@ def get_num_from_user():
     """
 
     num = input(
-        "Type 'q' to quit the program.\n Guess a number between 1 and 100: ")
+        "Type 'q' to quit the program.\nGuess a number between 1 and 100: ")
 
     try:
         if int(num) > 100 or int(num) < 1:
@@ -25,19 +25,17 @@ def get_num_from_user():
         else:
             return int(num)
     except TypeError:
-        try:
-            if num == "q":
-                print("Goodbye!")
-                exit()
-            else:
-                print("Invalid input. Must be between 1 and 100.\n")
-                return get_num_from_user()
-        except Exception:
-            print("Unknown error.")
+        if num == "q":
+            print("Goodbye!")
             exit()
+        else:
+            print("Invalid input. Must be between 1 and 100.\n")
+            return get_num_from_user()
 
 
 def main():
+    """ Main function to run the program.
+    'q' can be used to quit the program."""
     # Randomly generates a number between 1 and 100
     computer_num = random.randint(1, 100)
 
@@ -50,9 +48,6 @@ def main():
     # Counts the number of tries the user took to guess the number
     count = 1
 
-    '''
-    This while loop will continue to ask the user for another number until the user guesses the correct number.
-    Unless the user quits the program, the program will end.'''
     while not num_found:
         if user_guess > computer_num:
             print("Your guess is too high.\n")
@@ -66,7 +61,8 @@ def main():
             num_found = True
 
     print(
-        f"Your guess is correct. It was {computer_num}! It took you {count} {'tries' if count > 1 else 'try'} to guess the number.")
+        f"Your guess is correct. It was {computer_num}! It took you {count}\
+{'tries' if count > 1 else 'try'} to guess the number.")
 
 
 main()
