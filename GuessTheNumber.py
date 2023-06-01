@@ -8,7 +8,11 @@ def get_num_from_user():
 
     'q' to quit the program
 
-    Returns a valid user's guess
+    Returns:
+        _int_ : a valid user's guess
+
+    Raises: 
+        TypeError: If user's input is not a number between 1 and 100
     """
 
     num = input(
@@ -20,7 +24,7 @@ def get_num_from_user():
             return get_num_from_user()
         else:
             return int(num)
-    except Exception:
+    except TypeError:
         try:
             if num == "q":
                 print("Goodbye!")
